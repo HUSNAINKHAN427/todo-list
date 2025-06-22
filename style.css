@@ -1,101 +1,118 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'poppins',sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial;
 }
-.container{
-    width: 100%;
-    min-height: 100vh;
-    background-color: aqua;
-    padding: 10px;
 
-}
-.todo-app{
-    width: 100%;
-    max-width: 540px;
-    margin: 100px  auto 20px;
-    padding: 40px 30px 70px;
-    border-radius: 10px;
-    background: #fff;
-}
-.todo-app h2{
-    color: #002765;
+body {
+    background: linear-gradient(145deg, #dbeafe, #f0f4ff);
+    height: 100vh;
     display: flex;
+    justify-content: center;
     align-items: center;
-    margin-top: 20px;
-    margin-bottom: 10px;
+  
 }
-.row {
+
+.container {
+    width: 100%;
+    max-width: 400px;
+    background: #ffffffdd;
+    
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    padding: 20px 25px;
+}
+
+.todo-app h2 {
+    text-align: center;
+    color: #111827;
+    margin-bottom: 20px;
+}
+
+.input-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    flex: 1;
+    padding: 12px;
+    border-radius: 12px;
+    border: 1px solid #cbd5e1;
+    transition: all 0.3s;
+    font-size: 16px;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px #93c5fd55;
+}
+
+button {
+    padding: 12px 16px;
+    background-color: #3b82f6;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background-color: #2563eb;
+}
+
+#list-container {
+    list-style: none;
+}
+
+li {
+
+
+    background: #f1f5f9;
+    color: #111827;
+    padding: 12px 16px;
+    margin-bottom: 10px;
+    border-radius: 12px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #edeef0;
-    border-radius: 30px;
-    padding-left: 20px;
-    margin-bottom: 25px;
+    transition: all 0.3s ease-in-out;
+    animation: slideIn 0.3s ease;
 }
-.row input{
-    flex: 1;
-    border: none;
-    outline: none;
-    background: transparent;
-    padding: 10px;
-    font-weight: 14px;
 
+li:hover {
+    background: #e2e8f0;
 }
-button{
-    border: none;
-    outline: none;
-    padding: 16px 50px;
-    background-color: #ff5945;
-    color: #fff;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 40px;
-}
-ul li{
-    list-style: none;
-    font-size: 17px;
-    padding: 12px 8px 12px 50px;
-    user-select: none;
-    cursor: pointer;
-    position: relative;
-}
-ul li::before{
-    content: ' ';
-  
-    position: absolute;
-    height: 15px;
-    border-radius: 50%;
-    width: 15px;
-    background-size: cover;
-    top: 12px;
-    left: 8px;
-    border: 1px solid black;
-}
-ul li.checked{
-   
-    color: #555;
-    text-decoration: line-through;
-}
-ul li.checked::before{
-    background-color: #ff5945 ;
-}
-ul li span{
-    position: absolute;
-    right: 0;
-    top: 5px;
-    width: 40px;
-    height: 40px;
-    font-size: 22px;
-    color: #555;
-    line-height: 40px;
-    text-align: center;
-    border-radius: 50%;
 
+li .buttons {
+    display: flex;
+    gap: 10px;
 }
-ul li span:hover{
-    background-color: #edeef0;
 
+li button {
+    background: #e2e8f0;
+    color: #111827;
+    padding: 6px 10px;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+li button:hover {
+    background: #cbd5e1;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
