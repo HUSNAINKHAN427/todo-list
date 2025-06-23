@@ -13,8 +13,8 @@ addBtn.addEventListener("click", () => {
                         <button class="edit">✏️</button>
                         <button  class="remove">❌</button>
                 </div>`;
-    //remove task
     listContainer.appendChild(li);
+    //remove task
     let delBtn = li.querySelector(".remove");
 
     input.value = "";
